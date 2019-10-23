@@ -1,42 +1,58 @@
-import React from 'react';
-import './Header.css';
-import {Link} from 'react-router-dom'
+import React, {Component} from 'react';
+import './Header.css'
+import { Link } from 'react-router-dom';
 
-function Header() {
+class Header extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {isToggle: false};
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+  
+  render(){
+
+  let menuActive = this.state.isToggleOn ? 'is-active' : '';
+  
   return (
-    <div className="App has-shadow">
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+    <div>
+      <nav className="navbar has-shadow">
         <div className="navbar-brand">
-          <a className="navbar-item" href="">
+          <a className="navbar-item">
             MyCompany
           </a>
 
-          <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+          <span className={'navbar-burger burger' + menuActive} onClick={this.handleClick}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+
         </div>
 
-          <div className="navbar-end">
-            <div className="navbar-item">
+        <div className="navbar-end">
+          <div className={'navbar-menu' + menuActive}>
             <Link to='/' className="navbar-item">Home</Link>
             <Link to='/faq' className="navbar-item">Features</Link>
             <Link to='/faq' className="navbar-item">About</Link>
             <Link to='/faq' className="navbar-item">FAQ</Link>
-              <div className="buttons">
-                <a className="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a className="button is-light">
-                  Log in
-                </a>
-              </div>
-            </div>
+          </div>
+          <div className="buttons">
+            <a className="button is-primary is-outlined">
+              <strong>Join Now</strong>
+            </a>
+          </div>
         </div>
       </nav>
-    </div>
-  );
+    </div>);
+  }
 }
 
 export default Header;

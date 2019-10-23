@@ -24,10 +24,12 @@ class Header extends Component {
   return (
     <div>
       <nav className="navbar has-shadow">
+        {/* <div className="container"> */}
         <div className="navbar-brand">
-          <a className="navbar-item">
+          <a className="navbar-item" href="/">
             MyCompany
           </a>
+          {/* </div> */}
 
           <span className={'navbar-burger burger' + menuActive} onClick={this.handleClick}>
             <span></span>
@@ -39,10 +41,10 @@ class Header extends Component {
 
         <div className="navbar-end">
           <div className={'navbar-menu' + menuActive}>
-            <Link to='/' className="navbar-item">Home</Link>
-            <Link to='/faq' className="navbar-item">Features</Link>
-            <Link to='/faq' className="navbar-item">About</Link>
-            <Link to='/faq' className="navbar-item">FAQ</Link>
+            <Link to='/' className="navbar-item r-item">Home</Link>
+            <Link to='/faq' className="navbar-item r-item">Features</Link>
+            <Link to='/faq' className="navbar-item r-item">About</Link>
+            <Link to='/faq' className="navbar-item r-item">FAQ</Link>
           </div>
           <div className="buttons">
             <a className="button is-primary is-outlined">

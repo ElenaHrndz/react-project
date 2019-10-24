@@ -24,12 +24,10 @@ class Header extends Component {
   return (
     <div>
       <nav className="navbar has-shadow">
-        {/* <div className="container"> */}
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             MyCompany
           </a>
-          {/* </div> */}
 
           <span className={'navbar-burger burger' + menuActive} onClick={this.handleClick}>
             <span></span>

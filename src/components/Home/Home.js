@@ -1,19 +1,43 @@
 import React, { Component } from 'react';
 import './Home.css';
+import Highlighter from '../Highlighter/Highlighter';
 
 class Home extends Component {
-  render(){
-    let heading = "Soaring to new heights";
-    let subheading = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+  constructor(props) {
+    super(props);
+    this.state = {
+      heading: "Soaring to new heights",
+      subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      hightlights: [
+        {
+          title: "I think it's an absolutely excellent tool for our business. I can't survive without this thing.",
+          subtitle: "- Gary Simon"
+        },
+        {
+          title: "I think it's an absolutely excellent tool for our business. I can't survive without this thing.",
+          subtitle: "- Gary Simon"
+        },
+        {
+          title: "I think it's an absolutely excellent tool for our business. I can't survive without this thing.",
+          subtitle: "- Gary Simon"
+        },
+        {
+          title: "I think it's an absolutely excellent tool for our business. I can't survive without this thing.",
+          subtitle: "- Gary Simon"
+        }
+      ]
+    }
+  }
 
+  render(){
     return (
       <div>
         <section className="hero">
           <div className="hero-body">
               <div className="container">
-              <h1 className="title">{ heading }</h1>
+              <h1 className="title">{ this.state.heading }</h1>
               <div className="is-two-thirds column is-paddingless">
-                  <h2 className="subtitle is-4">{ subheading }</h2>
+                  <h2 className="subtitle is-4">{ this.state.subheading }</h2>
               </div>
               <a className="button is-large is-primary" id="learn">Learn more</a>
               </div>
@@ -35,33 +59,8 @@ class Home extends Component {
               </div>
             </div>
           
-
-          <div className="columns pd">
-            <div className="column">
-              <div className="card">
-                <div className="card-content">
-                  <p className="title">"I think it's an absolutely excellent tool for our business. I can't survive without this thing."</p>
-                  <p className="subtitle">- Gary Simon</p>
-                </div>
-              </div>
-            </div>
-            <div className="column">
-              <div className="card">
-                <div className="card-content">
-                  <p className="title">"I think it's an absolutely excellent tool for our business. I can't survive without this thing."</p>
-                  <p className="subtitle">- Gary Simon</p>
-                </div>
-              </div>
-            </div>
-            <div className="column">
-              <div className="card">
-                <div className="card-content">
-                  <p className="title">"I think it's an absolutely excellent tool for our business. I can't survive without this thing."</p>
-                  <p className="subtitle">- Gary Simon</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Highlighter hightlights={this.state.hightlights}/>
+          <Highlighter hightlights={this.state.hightlights}/>
           </div>
         </section>
       </div>

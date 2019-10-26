@@ -40,8 +40,8 @@ class Header extends Component {
         <div className="navbar-end">
           <div className={'navbar-menu' + menuActive}>
             <Link to='/' className="navbar-item r-item">Home</Link>
-            <Link to='/faq' className="navbar-item r-item">Features</Link>
-            <Link to='/faq' className="navbar-item r-item">About</Link>
+            <Link to='/pokemon' className="navbar-item r-item">Pokemon</Link>
+            <Link to='/tiles' className="navbar-item r-item">Tiles</Link>
             <Link to='/faq' className="navbar-item r-item">FAQ</Link>
           </div>
           <div className="buttons">

@@ -1,8 +1,3 @@
-.highlight :hover{
-  background-color: gold;
-  cursor: pointer;
-}
-
 .hero {
   background: url("../../assets/clouds.jpg");
   background-size: cover; }
